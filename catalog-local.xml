@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<catalog prefer="public" xmlns="urn:oasis:names:tc:entity:xmlns:xml:catalog">
+    <!-- FHIR and W5 Ontologies -->
+    <uri id="FHIR Ontology" name="http://hl7.org/fhir/fhir.ttl" uri="http://build.fhir.org/fhir.ttl"/>
+    <uri id="W5 Ontology" name="http://hl7.org/fhir/w5#" uri="http://build.fhir.org/w5.ttl"/>
+
+    <!-- Local resources -->
+    <uri id="Classifier Rules" name="http://example.org/rules/rules.owl" uri="rules.owl"/>
+    <uri id="SNOMED Subset" name="http://snomed.info/sct/900000000000207008" uri="snomed_subset.ttl"/>
+
+    <!-- FHIR RDF instances -->
+    <!-- CT scan w/ dx of Malignant tumor of craniopharyngeal duct -->
+    <uri id="CT DiagnosticReport" name="http://hl7.org/fhir/DiagnosticReport/f201.ttl" 
+        uri="http://build.fhir.org/diagnosticreport-example-f201-brainct.ttl"/>
+
+    <!-- Blood culture with dx of Bacteremia due to staphylcoccus -->
+    <uri id="Blood Culture DiagnosticReport" name="http://hl7.org/fhir/DiagnosticReport/f202.ttl" 
+         uri="http://build.fhir.org/diagnosticreport-example-f202-bloodculture.ttl"/>
+
+    <!-- Edited FHIR RDF instances -->
+    <!-- Imaging study with SNOMED code 'T-15460' changed to '7467003|Wrist joint structure' and 
+         '419161000|Unilateral left|' changed to '771000|Left|' --> 
+    <uri id="XR Imaging Study" name="http://hl7.org/fhir/ImagingStudy/example-xr.ttl" 
+        uri="imagingstudy-example-xr.ttl"/>
+
+    <!-- CT DiagnosticReport with status changed to 'prelim'-->
+    <uri id="CT DiagnosticReport" name="http://hl7.org/fhir/DiagnosticReport/prelimDX.ttl" 
+        uri="http://build.fhir.org/diagnosticreport-example-f201-prelim.ttl"/>
+
+    <!-- Medication examples with xsd:date data types changed to xsd:dateTime to accomodate FaCT++ -->
+    <uri id="Medication Example 1" name="http://hl7.org/fhir/MedicationStatement/example001.ttl" 
+        uri="medicationstatementexample1.ttl"/>
+    <uri id="Medication Example 4" name="http://hl7.org/fhir/MedicationStatement/example004.ttl" 
+        uri="medicationstatementexample4.ttl"/>
+
+    <!-- Medication example 1 w/ '385057009|Film-coated tablet| changed to '42162004|buccal tablet|' -->
+     <uri id="Buccal Medication Example" name="http://hl7.org/fhir/MedicationStatement/example001bc.ttl" 
+        uri="medicationstatementexample1bc.ttl"/>
+
+    <!-- Femur Bone Density with SNOMED type arc changed to OWL -->
+    <uri id="Femur Bone density w/ post-coordinated expression" name="http://hl7.org/fhir/Observation/bmd"
+        uri="observation-example-bmd.ttl"/> 
+
+    <group id="Folder Repository, directory=, recursive=true, Auto-Update=false, version=2" prefer="public" xml:base=""/>
+</catalog>

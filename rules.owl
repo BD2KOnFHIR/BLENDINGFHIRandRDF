@@ -1,0 +1,69 @@
+Prefix(owl:=<http://www.w3.org/2002/07/owl#>)
+Prefix(rdf:=<http://www.w3.org/1999/02/22-rdf-syntax-ns#>)
+Prefix(xml:=<http://www.w3.org/XML/1998/namespace>)
+Prefix(xsd:=<http://www.w3.org/2001/XMLSchema#>)
+Prefix(fhir:=<http://hl7.org/fhir/>)
+Prefix(rdfs:=<http://www.w3.org/2000/01/rdf-schema#>)
+Prefix(sct:=<http://snomed.info/id/>)
+Prefix(sctm:=<http://snomed.info/sct/subset/>)
+Prefix(dc:=<http://purl.org/dc/elements/1.1/>)
+
+Prefix(:=<http://example.org/rules/>)
+
+Ontology(<http://example.org/rules/rules.owl>
+Import(<http://snomed.info/sct/900000000000207008>)
+Import(<http://hl7.org/fhir/fhir.ttl>)
+
+# Property Chain Example -- Brute Force Approach
+# Declaration(Class(:FilmTabletMedicationBF))
+# EquivalentClasses(:FilmTabletMedicationBF 
+#  ObjectSomeValuesFrom(
+#    fhir:DomainResource.contained ObjectSomeValuesFrom(
+#      fhir:Medication.form ObjectSomeValuesFrom(
+#        fhir:CodeableConcept.coding sct:385057009))))
+
+# Property Chain Example -- Medication Statements that reference Film-coated tablets
+Declaration(ObjectProperty(:medicationDoseCode))
+Declaration(Class(:FilmTabletMedication))
+SubObjectPropertyOf(ObjectPropertyChain(fhir:DomainResource.contained fhir:Medication.form fhir:CodeableConcept.coding) :medicationDoseCode)
+
+EquivalentClasses(:FilmTabletMedication ObjectSomeValuesFrom(:medicationDoseCode sct:385057009))
+
+# Classifier Example -- Medication Statements that reference any tablet dose form
+Declaration(Class(:TabletDoseForm))
+
+EquivalentClasses(:TabletDoseForm ObjectSomeValuesFrom(:medicationDoseCode sct:385055001))
+# EquivalentClasses(:TabletDoseForm 
+#  ObjectSomeValuesFrom(
+#    fhir:DomainResource.contained ObjectSomeValuesFrom(
+#      fhir:Medication.form ObjectSomeValuesFrom(
+#        fhir:CodeableConcept.coding sct:385055001))))
+
+# Classifier Example -- DiagnosticReports the have codes for malignant neoplastic disease
+Declaration(ObjectProperty(:hasDiagnosis))
+Declaration(Class(:ReportWithCancerDiagnosis))
+SubObjectPropertyOf(
+  ObjectPropertyChain(fhir:DiagnosticReport.codedDiagnosis fhir:CodeableConcept.coding) :hasDiagnosis)
+AnnotationAssertion(dc:title :ReportWithCancerDiagnosis 
+                  "The set of diagnoses that are instances of malignant neoplastic disease (sct:363346000)")
+EquivalentClasses(:ReportWithCancerDiagnosis ObjectSomeValuesFrom(:hasDiagnosis sct:363346000))
+
+# The subject of a diagnostic report
+Declaration(ObjectProperty(:diagnosticSubject))
+SubObjectPropertyOf(ObjectPropertyChain(fhir:DiagnosticReport.subject fhir:link) :diagnosticSubject)
+
+# The finalized diagnostic report
+Declaration(Class(:FinalizedReport))
+AnnotationAssertion(dc:title :FinalizedReport "A diagnostic report in a final state")
+EquivalentClasses(:FinalizedReport ObjectSomeValuesFrom
+  (fhir:DiagnosticReport.status DataSomeValuesFrom 
+    (fhir:value DataOneOf("amended" "appended" "corrected" "final"))))
+
+# Composite example - Final Diagnostic Reports on Patients containing cancer diagnoses
+Declaration(Class(:FinalReportWithPatientCancerDiagnosis))
+EquivalentClasses(:FinalReportWithPatientCancerDiagnosis 
+  ObjectIntersectionOf 
+    (:FinalizedReport ObjectSomeValuesFrom(:diagnosticSubject fhir:Patient) :ReportWithCancerDiagnosis ))
+
+
+)

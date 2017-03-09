@@ -1,0 +1,125 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sct: <http://snomed.info/id/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<http://hl7.org/fhir/DiagnosticReport/f202> a fhir:DiagnosticReport;
+  fhir:nodeRole fhir:treeRoot;
+  fhir:Resource.id [ fhir:value "f202"];
+  fhir:DomainResource.text [
+     fhir:Narrative.status [ fhir:value "generated" ];
+     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Generated Narrative with Details</b></p><p><b>id</b>: f202</p><p><b>contained</b>: </p><p><b>basedOn</b>: id: req; status: active; intent: original-order; Blood culture for bacteria, including anaerobic screen <span>(Details : {SNOMED CT code '104177005' = 'Blood culture for bacteria, including anaerobic screen (procedure)', given as 'Blood culture for bacteria, including anaerobic screen'})</span>; Roel; Roel's encounter on March eleventh 2013</p><p><b>status</b>: final</p><p><b>category</b>: Laboratory test <span>(Details : {SNOMED CT code '15220000' = 'Laboratory test (procedure)', given as 'Laboratory test'}; {http://hl7.org/fhir/v2/0074 code 'LAB' = 'Laboratory)</span></p><p><b>code</b>: Blood culture for bacteria, including anaerobic screen <span>(Details : {SNOMED CT code '104177005' = 'Blood culture for bacteria, including anaerobic screen (procedure)', given as 'Blood culture for bacteria, including anaerobic screen'})</span></p><p><b>subject</b>: <a>Roel</a></p><p><b>issued</b>: Mar 11, 2013 10:28:00 AM</p><h3>Performers</h3><table><tr><td>-</td><td><b>Actor</b></td></tr><tr><td>*</td><td><a>AUMC</a></td></tr></table><p><b>result</b>: <a>Results for staphylococcus analysis on Roel's blood culture</a></p><p><b>conclusion</b>: Blood culture tested positive on staphylococcus aureus</p><p><b>codedDiagnosis</b>: Bacteremia due to staphylococcus <span>(Details : {SNOMED CT code '428763004' = 'Bacteremia due to Staphylococcus aureus (finding)', given as 'Bacteremia due to staphylococcus'})</span></p></div>"
+  ];
+  fhir:DomainResource.contained [
+     a fhir:ProcedureRequest;
+     fhir:index 0;
+     fhir:Resource.id [ fhir:value "req" ];
+     fhir:ProcedureRequest.status [ fhir:value "active" ];
+     fhir:ProcedureRequest.intent [ fhir:value "original-order" ];
+     fhir:ProcedureRequest.code [
+       fhir:CodeableConcept.coding [
+         fhir:index 0;
+         a sct:104177005;
+         fhir:Coding.system [ fhir:value "http://snomed.info/sct" ];
+         fhir:Coding.code [ fhir:value "104177005" ];
+         fhir:Coding.display [ fhir:value "Blood culture for bacteria, including anaerobic screen" ]
+       ]
+     ];
+     fhir:ProcedureRequest.subject [
+       fhir:link <http://hl7.org/fhir/Patient/f201>;
+       fhir:Reference.reference [ fhir:value "Patient/f201" ];
+       fhir:Reference.display [ fhir:value "Roel" ]
+     ];
+     fhir:ProcedureRequest.context [
+       fhir:link <http://hl7.org/fhir/Encounter/f203>;
+       fhir:Reference.reference [ fhir:value "Encounter/f203" ];
+       fhir:Reference.display [ fhir:value "Roel's encounter on March eleventh 2013" ]
+     ];
+     fhir:ProcedureRequest.requester [
+       fhir:ProcedureRequest.requester.agent [
+         fhir:link <http://hl7.org/fhir/Practitioner/f201>;
+         fhir:Reference.reference [ fhir:value "Practitioner/f201" ];
+         fhir:Reference.display [ fhir:value "Dokter Bronsig" ]
+       ]
+     ]
+  ];
+  fhir:DiagnosticReport.basedOn [
+     fhir:index 0;
+     fhir:Reference.reference [ fhir:value "#req" ]
+  ];
+  fhir:DiagnosticReport.status [ fhir:value "final"];
+  fhir:DiagnosticReport.category [
+     fhir:CodeableConcept.coding [
+       fhir:index 0;
+       a sct:15220000;
+       fhir:Coding.system [ fhir:value "http://snomed.info/sct" ];
+       fhir:Coding.code [ fhir:value "15220000" ];
+       fhir:Coding.display [ fhir:value "Laboratory test" ]
+     ], [
+       fhir:index 1;
+       fhir:Coding.system [ fhir:value "http://hl7.org/fhir/v2/0074" ];
+       fhir:Coding.code [ fhir:value "LAB" ]
+     ]
+  ];
+  fhir:DiagnosticReport.code [
+     fhir:CodeableConcept.coding [
+       fhir:index 0;
+       a sct:104177005;
+       fhir:Coding.system [ fhir:value "http://snomed.info/sct" ];
+       fhir:Coding.code [ fhir:value "104177005" ];
+       fhir:Coding.display [ fhir:value "Blood culture for bacteria, including anaerobic screen" ]
+     ]
+  ];
+  fhir:DiagnosticReport.subject [
+     fhir:link <http://hl7.org/fhir/Patient/f201>;
+     fhir:Reference.reference [ fhir:value "Patient/f201" ];
+     fhir:Reference.display [ fhir:value "Roel" ]
+  ];
+  fhir:DiagnosticReport.issued [ fhir:value "2013-03-11T10:28:00+01:00"^^xsd:dateTime];
+  fhir:DiagnosticReport.performer [
+     fhir:index 0;
+     fhir:DiagnosticReport.performer.actor [
+       fhir:link <http://hl7.org/fhir/Organization/f201>;
+       fhir:Reference.reference [ fhir:value "Organization/f201" ];
+       fhir:Reference.display [ fhir:value "AUMC" ]
+     ]
+  ];
+  fhir:DiagnosticReport.result [
+     fhir:index 0;
+     fhir:link <http://hl7.org/fhir/Observation/f206>;
+     fhir:Reference.reference [ fhir:value "Observation/f206" ];
+     fhir:Reference.display [ fhir:value "Results for staphylococcus analysis on Roel's blood culture" ]
+  ];
+  fhir:DiagnosticReport.conclusion [ fhir:value "Blood culture tested positive on staphylococcus aureus"];
+  fhir:DiagnosticReport.codedDiagnosis [
+     fhir:index 0;
+     fhir:CodeableConcept.coding [
+       fhir:index 0;
+       a sct:428763004;
+       fhir:Coding.system [ fhir:value "http://snomed.info/sct" ];
+       fhir:Coding.code [ fhir:value "428763004" ];
+       fhir:Coding.display [ fhir:value "Bacteremia due to staphylococcus" ]
+     ]
+  ] .
+
+<http://hl7.org/fhir/Patient/f201> a fhir:Patient .
+
+<http://hl7.org/fhir/Encounter/f203> a fhir:Encounter .
+
+<http://hl7.org/fhir/Practitioner/f201> a fhir:Practitioner .
+
+<http://hl7.org/fhir/Organization/f201> a fhir:Organization .
+
+<http://hl7.org/fhir/Observation/f206> a fhir:Observation .
+
+# - ontology header ------------------------------------------------------------
+
+<http://hl7.org/fhir/DiagnosticReport/f202.ttl> a owl:Ontology;
+  owl:imports fhir:fhir.ttl;
+  owl:versionIRI <http://build.fhir.org/DiagnosticReport/f202.ttl> .
+
+# -------------------------------------------------------------------------------------
+

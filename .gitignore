@@ -1,0 +1,3 @@
+# Don't include SNOMED Resources
+snomed_subset.ttl
+snomed_subset/
