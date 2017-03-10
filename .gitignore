@@ -1,3 +1,5 @@
 # Don't include SNOMED Resources
-snomed_subset.ttl
+
+# Let the small subset through
+# snomed_subset.ttl
 snomed_subset/

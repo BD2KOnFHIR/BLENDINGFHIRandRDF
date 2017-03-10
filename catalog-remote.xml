@@ -25,7 +25,7 @@
 
     <!-- CT DiagnosticReport with status changed to 'prelim'-->
     <uri id="CT DiagnosticReport" name="http://hl7.org/fhir/DiagnosticReport/prelimDX.ttl" 
-        uri="http://build.fhir.org/diagnosticreport-example-f201-prelim.ttl"/>
+        uri="diagnosticreport-example-f201-prelim.ttl"/>
 
     <!-- Medication examples with xsd:date data types changed to xsd:dateTime to accomodate FaCT++ -->
     <uri id="Medication Example 1" name="http://hl7.org/fhir/MedicationStatement/example001.ttl" 
@@ -38,7 +38,24 @@
         uri="medicationstatementexample1bc.ttl"/>
 
     <!-- Femur Bone Density with SNOMED type arc changed to OWL -->
-    <uri id="Femur Bone density w/ post-coordinated expression" name="http://hl7.org/fhir/Observation/bmd"
+    <uri id="Femur Bone density w/ post-coordinated expression" name="http://hl7.org/fhir/Observation/bmd.ttl"
+        uri="observation-example-bmd.ttl"/> 
+
+    <!-- ******************************************************************* 
+         The version URI's for local resources have to be redirected as well
+         ******************************************************************* -->
+    <uri id="SNOMED Subset" name="http://snomed.info/sct/900000000000207008/version/20170131" uri="snomed_subset.ttl"/>
+    <uri id="XR Imaging Study" name="http://build.fhir.org/ImagingStudy/example-xr.ttl" 
+        uri="imagingstudy-example-xr.ttl"/>
+    <uri id="CT DiagnosticReport" name="http://build.fhir.org/DiagnosticReport/prelimDX.ttl" 
+        uri="diagnosticreport-example-f201-prelim.ttl"/>
+    <uri id="Medication Example 1" name="http://build.fhir.org/MedicationStatement/example001.ttl" 
+        uri="medicationstatementexample1.ttl"/>
+    <uri id="Medication Example 4" name="http://build.fhir.org/MedicationStatement/example004.ttl" 
+        uri="medicationstatementexample4.ttl"/>
+    <uri id="Buccal Medication Example" name="http://build.fhir.org/MedicationStatement/example001bc.ttl" 
+        uri="medicationstatementexample1bc.ttl"/>
+    <uri id="Femur Bone density w/ post-coordinated expression" name="http://build.fhir.org/Observation/bmd.ttl"
         uri="observation-example-bmd.ttl"/> 
 
     <group id="Folder Repository, directory=, recursive=true, Auto-Update=false, version=2" prefer="public" xml:base=""/>
