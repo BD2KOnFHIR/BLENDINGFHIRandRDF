@@ -18,7 +18,7 @@
          uri="http://build.fhir.org/diagnosticreport-example-f202-bloodculture.ttl"/>
 
     <!-- Edited FHIR RDF instances -->
-    <!-- Imaging study with SNOMED code 'T-15460' changed to '7467003|Wrist joint structure' and 
+    <!-- Imaging study with SNOMED code 'T-15460' changed to '7467003|Wrist joint structure|' and
          '419161000|Unilateral left|' changed to '771000|Left|' --> 
     <uri id="XR Imaging Study" name="http://hl7.org/fhir/ImagingStudy/example-xr.ttl" 
         uri="imagingstudy-example-xr.ttl"/>
