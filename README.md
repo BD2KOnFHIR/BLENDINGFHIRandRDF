@@ -11,13 +11,19 @@ These files can be used to demonstrate the use of FHIR, RDF and SNOMED CT in the
 5. Select **Start Reasoner ** from the **Reasoner** tab
 6. Switch to the Entities tab to see the results
 
+![Protege Screenshot](images/protege_screenshot.png)
+
+The above image shows ```f201```,a final diagnostic report of a _'188340000 | Malignant tumor of craniopharyngeal duct'_, classified as an instance of ```FinalReportWithPatientCancerDiagnosis```, ```prelimDX```, a preliminary diagnostic report of the same thing classified as a ```ReportWithCancerDiagnosis``` and ```f201```, a final diagnostic report of a _'428763004 | Bacteremia due to staphylococcus|'_ classified as just a ```FinalizedReport```.
+
+Note that ```FinalizedReportWithCancerDiagnosis``` is a subclass of both ```FinalizedReport``` and ```ReportWithCancerDiagnosis```, meaning that ```f201``` is also an instance of both of those classifiers.
+![Proteg Screenshot 2](images/protege_screenshot_2.png)
 
 ## Files
 ### OWL Files
 * **[wrapper.owl](wrapper.owl)**: A wrapper ontology that imports all of the other ontologies needed for classification
 * **[fhir.ttl](fhir.ttl)**: the FHIR ontology.  Downloaded from: [http://build.fhir.org/fhir.ttl](http://build.fhir.org/fhir.ttl)
 * **[w5.ttl](w5.ttl)**: The FHIR "W5" (Who, What, Why, Where, When) Ontology.  Downloaded from: [http://build.fhir.org/w5.ttl](http://build.fhir.org/w5.ttl)
-* **[snomed_subset.ttl](snomed_subset.json)**: A small subset of [SNOMED CT](http://www.snomed.org/snomed-ct).  Output of [snomed_subset.sh](snomed_subset.sh)
+* **[snomed_subset.ttl](snomed_subset.ttl)**: A small subset of [SNOMED CT](http://www.snomed.org/snomed-ct).  Output of [snomed_subset.sh](snomed_subset.sh)
 * **[rules.owl](rules.owl)**: Sample classification rules.
 * **[diagnosticreport-example-f201-brainct.ttl](diagnosticreport-example-f201-brainct.ttl)**: Example [FHIR DiagnosticReport](http://build.fhir.org/diagnosticreport.html) of a *188340000| Malignant tumor of craniopharyngeal duct |*. Used to demonstrate *ReportWithCancerDiagnosis* classifier.  Downloaded from: [http://build.fhir.org/diagnosticreport-example-f201-brainct.ttl](http://build.fhir.org/diagnosticreport-example-f201-brainct.ttl)
 * **[diagnosticreport-example-f201-prelim.ttl](diagnosticreport-example-f201-prelim.ttl)**: Identical to f201-brainct.ttl with exception that report status was changed from 'final' to 'prelim'.  Used to demonstrate *FinalizedReport* classifier. 
@@ -32,3 +38,15 @@ These files can be used to demonstrate the use of FHIR, RDF and SNOMED CT in the
 * **[catalog-remote.xml](catalog-remote.xml)**: An [OASIS XML Catalog](https://www.oasis-open.org/committees/entity/spec-2001-08-06.html) that references sources from the [FHIR Build Server](http://build.fhir.org) when they haven't been changed locally
 * **[snomed_subset.json](snomed_subset.json)**: configuration file used by the [SNOMEDToOWL](https://github.com/hsolbrig/SNOMEDToOWL/blob/master/scripts/SNOMEDToOWL.md) tool to generate the SNOMED CT subset.
 * **[snomed_subset.sh](snomed_subset.sh)**: Shell script to generate [snomed_subset.ttl](snomed_subset.ttl)
+
+## Building ```snomed_subset.ttl```
+1) Follow the installation instructions on the [SNOMEDToOWL](https://github.com/hsolbrig/SNOMEDToOWL) conversion page.
+2) Download the latest image of SNOMED CT International.  The US Download Site can be found at https://www.nlm.nih.gov/healthit/snomedct/index.html -- non US citizens need to consult [SNOMED International](http://www.snomed.org/) for instructions on where to get SNOMED in their country.
+3) Run ```RF2Filter``` to extract the desired subset.  In the example below, we extract the RF2 for ancestors and descendants of _'363346000 |Malignant neoplastic disease (disorder)|'_, _'40238009 |Hand joint structure (body structure)|'_ and _'385055001 |Tablet dose form (qualifier value)|'_   into the ```snomed_subset``` directory:
+  ```bash
+> RF2Filter -i -a -d SnomedCT_InternationalRF2_Production_20170131T120000/Snapshot snomed_subset 363346000 40238009 385055001
+```
+4) Run ```SNOMEDToOWL``` to generate OWL for the output RF2:
+```bash
+> SNOMEDToOWL snomed_subset snomed_subset.json snomed_subset.ttl
+```
