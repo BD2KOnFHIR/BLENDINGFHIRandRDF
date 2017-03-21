@@ -44,7 +44,10 @@
   fhir:Observation.bodySite [
      fhir:CodeableConcept.coding [
        fhir:index 0;
-       a sct:71341001%3a272741003%3d7771000;
+       a sct:71341001,
+         rdfs:subClassOf [a owl:Restriction;
+            owl:onProperty sct:272741002;
+            owl:someValuesFrom sct:7771000];
        fhir:Coding.system [ fhir:value "http://snomed.info/sct" ];
        fhir:Coding.code [ fhir:value "71341001:272741003=7771000" ]
      ];
