@@ -213,13 +213,13 @@ sct:175129009 a owl:Class ;
     rdfs:subClassOf [ a owl:Restriction ;
             owl:onProperty sct:609096000 ;
             owl:someValuesFrom [ a owl:Restriction ;
-                    owl:onProperty sct:405813007 ;
-                    owl:someValuesFrom sct:80891009 ] ],
+                    owl:onProperty sct:363703001 ;
+                    owl:someValuesFrom sct:261004008 ] ],
         [ a owl:Restriction ;
             owl:onProperty sct:609096000 ;
             owl:someValuesFrom [ a owl:Restriction ;
-                    owl:onProperty sct:363703001 ;
-                    owl:someValuesFrom sct:261004008 ] ],
+                    owl:onProperty sct:405813007 ;
+                    owl:someValuesFrom sct:80891009 ] ],
         sct:27352000 .
 
 sct:175890004 a owl:Class ;
@@ -3485,7 +3485,7 @@ sct:702517002 a owl:Class ;
             owl:someValuesFrom [ a owl:Class ;
                     owl:intersectionOf ( [ a owl:Restriction ;
                                 owl:onProperty sct:405813007 ;
-                                owl:someValuesFrom sct:91397008 ] [ a owl:Restriction ;
+                                owl:someValuesFrom sct:45048000 ] [ a owl:Restriction ;
                                 owl:onProperty sct:260686004 ;
                                 owl:someValuesFrom sct:312251004 ] ) ] ],
         [ a owl:Restriction ;
@@ -3493,7 +3493,7 @@ sct:702517002 a owl:Class ;
             owl:someValuesFrom [ a owl:Class ;
                     owl:intersectionOf ( [ a owl:Restriction ;
                                 owl:onProperty sct:405813007 ;
-                                owl:someValuesFrom sct:45048000 ] [ a owl:Restriction ;
+                                owl:someValuesFrom sct:91397008 ] [ a owl:Restriction ;
                                 owl:onProperty sct:260686004 ;
                                 owl:someValuesFrom sct:312251004 ] ) ] ],
         sct:419673001,
@@ -3730,13 +3730,13 @@ sct:84755001 a owl:Class ;
     rdfs:subClassOf [ a owl:Restriction ;
             owl:onProperty sct:609096000 ;
             owl:someValuesFrom [ a owl:Restriction ;
-                    owl:onProperty sct:424244007 ;
-                    owl:someValuesFrom sct:82107009 ] ],
+                    owl:onProperty sct:363703001 ;
+                    owl:someValuesFrom sct:262202000 ] ],
         [ a owl:Restriction ;
             owl:onProperty sct:609096000 ;
             owl:someValuesFrom [ a owl:Restriction ;
-                    owl:onProperty sct:363703001 ;
-                    owl:someValuesFrom sct:262202000 ] ],
+                    owl:onProperty sct:424244007 ;
+                    owl:someValuesFrom sct:82107009 ] ],
         sct:53438000 .
 
 sct:900000000000442005 a owl:Class ;
@@ -6865,13 +6865,13 @@ sct:228703003 a owl:Class ;
     rdfs:subClassOf [ a owl:Restriction ;
             owl:onProperty sct:609096000 ;
             owl:someValuesFrom [ a owl:Restriction ;
-                    owl:onProperty sct:424244007 ;
-                    owl:someValuesFrom sct:82107009 ] ],
+                    owl:onProperty sct:363703001 ;
+                    owl:someValuesFrom sct:262202000 ] ],
         [ a owl:Restriction ;
             owl:onProperty sct:609096000 ;
             owl:someValuesFrom [ a owl:Restriction ;
-                    owl:onProperty sct:363703001 ;
-                    owl:someValuesFrom sct:262202000 ] ],
+                    owl:onProperty sct:424244007 ;
+                    owl:someValuesFrom sct:82107009 ] ],
         sct:9990009 .
 
 sct:429858000 a owl:Class ;

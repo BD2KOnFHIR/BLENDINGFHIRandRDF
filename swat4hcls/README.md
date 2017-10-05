@@ -20,6 +20,8 @@ as look at it crosseyed
   * [18834000 |Malignat tumor if craniopharyngeal duct (disorder)|](http://snomed.info/id/188340000)
   * [394914008 |Radiology - speciality (qualifier value)](http://snomed.info/id/394914008)
   * [429858000|Computed tomography of head and neck (procedure)|](http://snomed.info/id/429858000)
+ 
+   see [SNOMED_CT directory](SNOMED_CT) for instructions
 * README.md -- this file
 
 ## Use
