@@ -1,0 +1,26 @@
+Prefix(owl:=<http://www.w3.org/2002/07/owl#>)
+Prefix(rdf:=<http://www.w3.org/1999/02/22-rdf-syntax-ns#>)
+Prefix(xml:=<http://www.w3.org/XML/1998/namespace>)
+Prefix(xsd:=<http://www.w3.org/2001/XMLSchema#>)
+Prefix(fhir:=<http://hl7.org/fhir/>)
+Prefix(rdfs:=<http://www.w3.org/2000/01/rdf-schema#>)
+Prefix(sct:=<http://snomed.info/id/>)
+Prefix(sctm:=<http://snomed.info/sct/subset/>)
+Prefix(dc:=<http://purl.org/dc/elements/1.1/>)
+Prefix(diagnostic-report-status:=<http://hl7.org/fhir/diagnostic-report-status/>)
+
+Prefix(:=<http://example.org/swat4ls/finalreport/>)
+
+Ontology(<http://example.org/swat4ls/finalreport>
+Import(<http://hl7.org/fhir/fhir.ttl>)
+Import(<http://hl7.org/fhir/diagnostic-report-status/>)
+Import(<http://hl7.org/fhir/DiagnosticReport/f201.ttl>)
+
+Declaration(Class(:FinalStatus))
+SubClassOf(diagnostic-report-status:final :FinalStatus)
+SubClassOf(diagnostic-report-status:amended :FinalStatus)
+
+Declaration(Class(:FinalReport))
+EquivalentClasses(:FinalReport ObjectSomeValuesFrom(fhir:DiagnosticReport.status :FinalStatus))
+
+)

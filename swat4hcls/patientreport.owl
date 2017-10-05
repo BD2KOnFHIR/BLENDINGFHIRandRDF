@@ -1,0 +1,28 @@
+Prefix(owl:=<http://www.w3.org/2002/07/owl#>)
+Prefix(rdf:=<http://www.w3.org/1999/02/22-rdf-syntax-ns#>)
+Prefix(xml:=<http://www.w3.org/XML/1998/namespace>)
+Prefix(xsd:=<http://www.w3.org/2001/XMLSchema#>)
+Prefix(fhir:=<http://hl7.org/fhir/>)
+Prefix(rdfs:=<http://www.w3.org/2000/01/rdf-schema#>)
+Prefix(sct:=<http://snomed.info/id/>)
+Prefix(sctm:=<http://snomed.info/sct/subset/>)
+Prefix(dc:=<http://purl.org/dc/elements/1.1/>)
+
+Prefix(:=<http://example.org/swat4ls/patientreport/>)
+
+Ontology(<http://example.org/swat4ls/patientreport>
+Import(<http://hl7.org/fhir/fhir.ttl>)
+Import(<http://hl7.org/fhir/DiagnosticReport/f201.ttl>)
+
+Declaration(ObjectProperty(fhir:DiagnosticReport.subject.link))
+SubObjectPropertyOf(
+  ObjectPropertyChain(fhir:DiagnosticReport.subject fhir:link) fhir:DiagnosticReport.subject.link)
+
+# Class declaration
+Declaration(Class(:PatientReport))
+AnnotationAssertion(dc:title :PatientReport
+                  "DiagnosticReports whose subjects are patients")
+EquivalentClasses(:PatientReport
+    ObjectSomeValuesFrom(fhir:DiagnosticReport.subject.link fhir:Patient))
+
+)
