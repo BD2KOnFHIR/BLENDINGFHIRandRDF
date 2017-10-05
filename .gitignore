@@ -1,7 +1,6 @@
-# Don't include SNOMED Resources
 
-# Let the small subset through
-# snomed_subset.ttl
 snomed_subset/
-SNOMED_CT/
+swat4hcls/SNOMED_CT/Refset/
+swat4hcls/SNOMED_CT/Terminology/
 *.swp
+.idea/
