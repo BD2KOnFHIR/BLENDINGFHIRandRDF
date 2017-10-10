@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<catalog prefer="public" xmlns="urn:oasis:names:tc:entity:xmlns:xml:catalog">
+    <uri id="DiagnosticReport" name="http://hl7.org/fhir/DiagnosticReport/f201.ttl" uri="diagnosticreport-example-f201-brainct.ttl"/>
+    <uri id="Thyroid Diagnostic Report" name="http://hl7.org/fhir/DiagnosticReport/dxreport117.ttl" uri="diagnosticreport-example-thyroidtumor.ttl"/>
+    <uri id="FHIR Metadata Vocabulary" name="http://hl7.org/fhir/fhir.ttl" uri="fhir.ttl"/>
+    <uri id="W5 Ontology" name="http://hl7.org/fhir/w5#" uri="w5.ttl"/>
+    <uri id="DiagnosticReport Status Codesystem" name="http://hl7.org/fhir/diagnostic-report-status/" uri="codesystem-diagnostic-report-status.owl"/>
+    <uri id="Final DiagnosticReport" name="http://example.org/yosemite/finalreport" uri="finalreport.owl"/>
+    <uri id="Patient DiagnosticReport" name="http://example.org/yosemite/patientreport" uri="patientreport.owl"/>
+    <uri id="Cancer DiagnosticReport" name="http://example.org/yosemite/cancerreport" uri="cancerreport.owl"/>
+    <uri id="Thyroid disease report" name="http://example.org/yosemite/thyroiddisease" uri="thyroidreport.owl"/>
+    <uri id="SNOMED Cancer Subset" name="http://snomed.info/sct/900000000000207008cancer_subset" uri="snomed_cancer_subset.ttl"/>
+    <uri id="SNOMED Thyroid Subset" name="http://snomed.info/sct/900000000000207008thyroid_subset" uri="snomed_thyroid_subset.ttl"/>
+    <group id="Folder Repository, directory=, recursive=true, Auto-Update=false, version=2" prefer="public" xml:base=""/>
+</catalog>

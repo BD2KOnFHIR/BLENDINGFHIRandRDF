@@ -1,0 +1,175 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sct: <http://snomed.info/id/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<http://hl7.org/fhir/ImagingStudy/example-xr> a fhir:ImagingStudy;
+  fhir:nodeRole fhir:treeRoot;
+  fhir:Resource.id [ fhir:value "example-xr"];
+  fhir:DomainResource.text [
+     fhir:Narrative.status [ fhir:value "generated" ];
+     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\">XR Wrist 3+ Views. John Smith (MRN: 09236). Accession: W12342398. Performed: 2017-01-01. 1 series, 2 images.</div>"
+  ];
+  fhir:ImagingStudy.uid [ fhir:value "urn:oid:2.16.124.113543.6003.1154777499.30246.19789.3503430046"];
+  fhir:ImagingStudy.accession [
+     fhir:Identifier.use [ fhir:value "usual" ];
+     fhir:Identifier.type [
+       fhir:CodeableConcept.coding [
+         fhir:index 0;
+         fhir:Coding.system [ fhir:value "http://hl7.org/fhir/v2/0203" ];
+         fhir:Coding.code [ fhir:value "ACSN" ]
+       ]
+     ];
+     fhir:Identifier.value [ fhir:value "W12342398" ];
+     fhir:Identifier.assigner [
+       fhir:link <http://hl7.org/fhir/Organization/dicom-organization>;
+       fhir:Reference.reference [ fhir:value "Organization/dicom-organization" ]
+     ]
+  ];
+  fhir:ImagingStudy.identifier [
+     fhir:index 0;
+     fhir:Identifier.use [ fhir:value "secondary" ];
+     fhir:Identifier.value [ fhir:value "55551234" ];
+     fhir:Identifier.assigner [
+       fhir:link <http://hl7.org/fhir/Organization/dicom-organization>;
+       fhir:Reference.reference [ fhir:value "Organization/dicom-organization" ]
+     ]
+  ];
+  fhir:ImagingStudy.availability [ fhir:value "ONLINE"];
+  fhir:ImagingStudy.modalityList [
+     fhir:index 0;
+     fhir:Coding.system [ fhir:value "http://nema.org/dicom/dicm" ];
+     fhir:Coding.code [ fhir:value "DX" ]
+  ];
+  fhir:ImagingStudy.patient [
+     fhir:link <http://hl7.org/fhir/Patient/dicom>;
+     fhir:Reference.reference [ fhir:value "Patient/dicom" ]
+  ];
+  fhir:ImagingStudy.context [
+     fhir:link <http://hl7.org/fhir/Encounter/example>;
+     fhir:Reference.reference [ fhir:value "Encounter/example" ]
+  ];
+  fhir:ImagingStudy.started [ fhir:value "2017-01-01T11:01:20+03:00"^^xsd:dateTime];
+  fhir:ImagingStudy.basedOn [
+     fhir:index 0;
+     fhir:link <http://hl7.org/fhir/ProcedureRequest/example>;
+     fhir:Reference.reference [ fhir:value "ProcedureRequest/example" ]
+  ];
+  fhir:ImagingStudy.referrer [
+     fhir:link <http://hl7.org/fhir/Practitioner/example>;
+     fhir:Reference.reference [ fhir:value "Practitioner/example" ]
+  ];
+  fhir:ImagingStudy.interpreter [
+     fhir:index 0;
+     fhir:link <http://hl7.org/fhir/Practitioner/example>;
+     fhir:Reference.reference [ fhir:value "Practitioner/example" ]
+  ];
+  fhir:ImagingStudy.endpoint [
+     fhir:index 0;
+     fhir:link <http://hl7.org/fhir/Endpoint/example-wadors>;
+     fhir:Reference.reference [ fhir:value "Endpoint/example-wadors" ]
+  ];
+  fhir:ImagingStudy.numberOfSeries [ fhir:value "1"^^xsd:nonNegativeInteger];
+  fhir:ImagingStudy.numberOfInstances [ fhir:value "2"^^xsd:nonNegativeInteger];
+  fhir:ImagingStudy.procedureReference [
+     fhir:index 0;
+     fhir:link <http://hl7.org/fhir/Procedure/example>;
+     fhir:Reference.reference [ fhir:value "Procedure/example" ]
+  ];
+  fhir:ImagingStudy.procedureCode [
+     fhir:index 0;
+     fhir:CodeableConcept.coding [
+       fhir:index 0;
+       fhir:Coding.system [ fhir:value "http://www.radlex.org" ];
+       fhir:Coding.code [ fhir:value "RPID2589" ];
+       fhir:Coding.display [ fhir:value "XR Wrist 3+ Views" ]
+     ];
+     fhir:CodeableConcept.text [ fhir:value "XR Wrist 3+ Views" ]
+  ];
+  fhir:ImagingStudy.reason [
+     fhir:CodeableConcept.coding [
+       fhir:index 0;
+       a sct:357009;
+       fhir:Coding.system [ fhir:value "http://snomed.info/sct" ];
+       fhir:Coding.code [ fhir:value "357009" ];
+       fhir:Coding.display [ fhir:value "Closed fracture of trapezoidal bone of wrist" ]
+     ]
+  ];
+  fhir:ImagingStudy.description [ fhir:value "XR Wrist 3+ Views"];
+  fhir:ImagingStudy.series [
+     fhir:index 0;
+     fhir:ImagingStudy.series.uid [ fhir:value "urn:oid:2.16.124.113543.6003.1154777499.30246.19789.3503430045.1" ];
+     fhir:ImagingStudy.series.number [ fhir:value "3"^^xsd:nonNegativeInteger ];
+     fhir:ImagingStudy.series.modality [
+       fhir:Coding.system [ fhir:value "http://nema.org/dicom/dicm" ];
+       fhir:Coding.code [ fhir:value "DX" ]
+     ];
+     fhir:ImagingStudy.series.description [ fhir:value "XR Wrist 3+ Views" ];
+     fhir:ImagingStudy.series.numberOfInstances [ fhir:value "2"^^xsd:nonNegativeInteger ];
+     fhir:ImagingStudy.series.availability [ fhir:value "ONLINE" ];
+     fhir:ImagingStudy.series.endpoint [
+       fhir:index 0;
+       fhir:link <http://hl7.org/fhir/Endpoint/example-wadors>;
+       fhir:Reference.reference [ fhir:value "Endpoint/example-wadors" ]
+     ];
+     fhir:ImagingStudy.series.bodySite [
+       a sct:7467003;
+       a [owl:Restriction;
+          owl:onProperty sct:272741003;
+          owl:someValuesFrom sct:7771000];
+       fhir:Coding.system [ fhir:value "http://snomed.info/sct" ];
+       fhir:Coding.code [ fhir:value "7467003" ];
+       fhir:Coding.display [ fhir:value "Wrist joint structure" ]
+     ];
+     fhir:ImagingStudy.series.laterality [
+       a sct:7771000;
+       fhir:Coding.system [ fhir:value "http://snomed.info/sct" ];
+       fhir:Coding.code [ fhir:value "7771000" ];
+       fhir:Coding.display [ fhir:value "Left" ]
+     ];
+     fhir:ImagingStudy.series.started [ fhir:value "2011-01-01T11:01:20+03:00"^^xsd:dateTime ];
+     fhir:ImagingStudy.series.performer [
+       fhir:index 0;
+       fhir:link <http://hl7.org/fhir/Practitioner/example>;
+       fhir:Reference.reference [ fhir:value "Practitioner/example" ]
+     ];
+     fhir:ImagingStudy.series.instance [
+       fhir:index 0;
+       fhir:ImagingStudy.series.instance.uid [ fhir:value "urn:oid:2.16.124.113543.6003.1154777499.30246.19789.3503430045.1.1" ];
+       fhir:ImagingStudy.series.instance.number [ fhir:value "1"^^xsd:nonNegativeInteger ];
+       fhir:ImagingStudy.series.instance.sopClass [ fhir:value "urn:oid:1.2.840.10008.5.1.4.1.1.2" ];
+       fhir:ImagingStudy.series.instance.title [ fhir:value "PA VIEW" ]
+     ], [
+       fhir:index 1;
+       fhir:ImagingStudy.series.instance.uid [ fhir:value "urn:oid:2.16.124.113543.6003.1154777499.30246.19789.3503430045.1.2" ];
+       fhir:ImagingStudy.series.instance.number [ fhir:value "2"^^xsd:nonNegativeInteger ];
+       fhir:ImagingStudy.series.instance.sopClass [ fhir:value "urn:oid:1.2.840.10008.5.1.4.1.1.2" ];
+       fhir:ImagingStudy.series.instance.title [ fhir:value "LL VIEW" ]
+     ]
+  ] .
+
+<http://hl7.org/fhir/Organization/dicom-organization> a fhir:Organization .
+
+<http://hl7.org/fhir/Patient/dicom> a fhir:Patient .
+
+<http://hl7.org/fhir/Encounter/example> a fhir:Encounter .
+
+<http://hl7.org/fhir/ProcedureRequest/example> a fhir:ProcedureRequest .
+
+<http://hl7.org/fhir/Practitioner/example> a fhir:Practitioner .
+
+<http://hl7.org/fhir/Endpoint/example-wadors> a fhir:Endpoint .
+
+<http://hl7.org/fhir/Procedure/example> a fhir:Procedure .
+
+# - ontology header ------------------------------------------------------------
+
+<http://hl7.org/fhir/ImagingStudy/example-xr.ttl> a owl:Ontology;
+  owl:imports fhir:fhir.ttl;
+  owl:versionIRI <http://build.fhir.org/ImagingStudy/example-xr.ttl> .
+
+# -------------------------------------------------------------------------------------
+

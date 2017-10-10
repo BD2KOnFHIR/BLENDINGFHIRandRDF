@@ -1,0 +1,87 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sct: <http://snomed.info/id/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix diagnostic-report-status: <http://hl7.org/fhir/diagnostic-report-status/>.
+
+# - resource -------------------------------------------------------------------
+
+<http://hl7.org/fhir/DiagnosticReport/dxreport117> a fhir:DiagnosticReport;
+  fhir:nodeRole fhir:treeRoot;
+  fhir:Resource.id [ fhir:value "dxreport117"];
+  fhir:DomainResource.text [
+     fhir:Narrative.status [ fhir:value "generated" ];
+     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\">(deleted)</div>"
+  ];
+  fhir:DiagnosticReport.status [ a diagnostic-report-status:final; fhir:value "final"];
+  fhir:DiagnosticReport.category [
+     fhir:CodeableConcept.coding [
+       fhir:index 0;
+       a sct:394914008;
+       fhir:Coding.system [ fhir:value "http://snomed.info/sct" ];
+       fhir:Coding.code [ fhir:value "394914008" ];
+       fhir:Coding.display [ fhir:value "Radiology" ]
+     ], [
+       fhir:index 1;
+       fhir:Coding.system [ fhir:value "http://hl7.org/fhir/v2/0074" ];
+       fhir:Coding.code [ fhir:value "RAD" ]
+     ]
+  ];
+  fhir:DiagnosticReport.code [
+     fhir:CodeableConcept.coding [
+       fhir:index 0;
+       a sct:429858000;
+       fhir:Coding.system [ fhir:value "http://snomed.info/sct" ];
+       fhir:Coding.code [ fhir:value "429858000" ];
+       fhir:Coding.display [ fhir:value "Computed tomography (CT) of head and neck" ]
+     ];
+     fhir:CodeableConcept.text [ fhir:value "CT of head-neck" ]
+  ];
+  fhir:DiagnosticReport.subject [
+     fhir:link <http://hl7.org/fhir/Patient/f201>;
+     fhir:Reference.reference [ fhir:value "Patient/f201" ];
+     fhir:Reference.display [ fhir:value "Roel" ]
+  ];
+  fhir:DiagnosticReport.effectiveDateTime [ fhir:value "2012-12-01T12:00:00+01:00"^^xsd:dateTime];
+  fhir:DiagnosticReport.issued [ fhir:value "2012-12-01T12:00:00+01:00"^^xsd:dateTime];
+  fhir:DiagnosticReport.performer [
+     fhir:index 0;
+     fhir:DiagnosticReport.performer.actor [
+       fhir:link <http://hl7.org/fhir/Organization/f203>;
+       fhir:Reference.reference [ fhir:value "Organization/f203" ];
+       fhir:Reference.display [ fhir:value "Blijdorp MC" ]
+     ]
+  ];
+  fhir:DiagnosticReport.imagingStudy [
+     fhir:index 0;
+     fhir:Reference.display [ fhir:value "HEAD and NECK CT DICOM imaging study" ]
+  ];
+  fhir:DiagnosticReport.conclusion [ fhir:value "CT brains: tumor of the left lobe of the thyroid gland."];
+  fhir:DiagnosticReport.codedDiagnosis [
+     fhir:index 0;
+     fhir:CodeableConcept.coding [
+       fhir:index 0;
+       a sct:363346000;
+       a [ a owl:Restriction ;
+           owl:onProperty sct:609096000 ;
+           owl:someValuesFrom [ a owl:Restriction ;
+               owl:onProperty sct:363698007 ;
+               owl:someValuesFrom sct:170784008 ] ] ;
+       fhir:Coding.system [ fhir:value "http://snomed.info/sct" ];
+       fhir:Coding.code [ fhir:value "363346000:{363698007=170784008}" ];
+       fhir:Coding.display [ fhir:value "Malignant tumor of left lobe of thyroid gland" ]
+     ]
+  ] .
+
+<http://hl7.org/fhir/Patient/f201> a fhir:Patient .
+
+<http://hl7.org/fhir/Organization/f203> a fhir:Organization .
+
+# - ontology header ------------------------------------------------------------
+
+<http://hl7.org/fhir/DiagnosticReport/dxreport117.ttl> a owl:Ontology;
+  owl:imports fhir:fhir.ttl.
+
+# -------------------------------------------------------------------------------------
+

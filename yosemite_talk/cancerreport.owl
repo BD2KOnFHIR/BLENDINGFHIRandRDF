@@ -1,0 +1,30 @@
+Prefix(owl:=<http://www.w3.org/2002/07/owl#>)
+Prefix(rdf:=<http://www.w3.org/1999/02/22-rdf-syntax-ns#>)
+Prefix(xml:=<http://www.w3.org/XML/1998/namespace>)
+Prefix(xsd:=<http://www.w3.org/2001/XMLSchema#>)
+Prefix(fhir:=<http://hl7.org/fhir/>)
+Prefix(rdfs:=<http://www.w3.org/2000/01/rdf-schema#>)
+Prefix(sct:=<http://snomed.info/id/>)
+Prefix(sctm:=<http://snomed.info/sct/subset/>)
+Prefix(dc:=<http://purl.org/dc/elements/1.1/>)
+
+Prefix(:=<http://example.org/yosemite/cancerreport/>)
+
+Ontology(<http://example.org/yosemite/cancerreport>
+Import(<http://snomed.info/sct/900000000000207008cancer_subset>)
+Import(<http://hl7.org/fhir/fhir.ttl>)
+Import(<http://hl7.org/fhir/DiagnosticReport/f201.ttl>)
+
+# Classifier Example -- DiagnosticReports the have codes for malignant neoplastic disease
+# Property chan for the actual coding
+Declaration(ObjectProperty(fhir:DiagnosticReport.codedDiagnosis.coding))
+SubObjectPropertyOf(
+  ObjectPropertyChain(fhir:DiagnosticReport.codedDiagnosis fhir:CodeableConcept.coding) fhir:DiagnosticReport.codedDiagnosis.coding)
+
+# Class declaration
+Declaration(Class(:ReportWithCancerDiagnosis))
+AnnotationAssertion(dc:title :ReportWithCancerDiagnosis 
+                  "The set of diagnoses that are instances of malignant neoplastic disease (sct:363346000)")
+EquivalentClasses(:ReportWithCancerDiagnosis ObjectSomeValuesFrom(fhir:DiagnosticReport.codedDiagnosis.coding sct:363346000))
+
+)
