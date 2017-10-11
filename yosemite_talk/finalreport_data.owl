@@ -1,0 +1,21 @@
+Prefix(owl:=<http://www.w3.org/2002/07/owl#>)
+Prefix(rdf:=<http://www.w3.org/1999/02/22-rdf-syntax-ns#>)
+Prefix(xml:=<http://www.w3.org/XML/1998/namespace>)
+Prefix(xsd:=<http://www.w3.org/2001/XMLSchema#>)
+Prefix(fhir:=<http://hl7.org/fhir/>)
+Prefix(rdfs:=<http://www.w3.org/2000/01/rdf-schema#>)
+Prefix(sct:=<http://snomed.info/id/>)
+Prefix(sctm:=<http://snomed.info/sct/subset/>)
+Prefix(dc:=<http://purl.org/dc/elements/1.1/>)
+
+Prefix(:=<http://example.org/yosemite/finalreport/>)
+
+Ontology(<http://example.org/yosemite/finalreport_data>
+Import(<http://hl7.org/fhir/fhir.ttl>)
+Import(<http://hl7.org/fhir/DiagnosticReport/f201.ttl>)
+
+Declaration(Class(:FinalizedReport))
+EquivalentClasses(:FinalizedReport ObjectSomeValuesFrom
+  (fhir:DiagnosticReport.status DataSomeValuesFrom
+    (fhir:value DataOneOf("amended" "appended" "corrected" "final"))))
+)

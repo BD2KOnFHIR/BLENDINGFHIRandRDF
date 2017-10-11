@@ -2,5 +2,7 @@
 snomed_subset/
 swat4hcls/SNOMED_CT/Refset/
 swat4hcls/SNOMED_CT/Terminology/
+yosemite_talk/SNOMED_CT/Refset/
+yosemite_talk/SNOMED_CT/Terminology/
 *.swp
 .idea/

@@ -21,12 +21,12 @@ sct:106104001 a owl:Class ;
             owl:intersectionOf ( sct:118232004 sct:248842004 [ a owl:Restriction ;
                         owl:onProperty sct:609096000 ;
                         owl:someValuesFrom [ a owl:Restriction ;
-                                owl:onProperty sct:363714003 ;
-                                owl:someValuesFrom sct:66523006 ] ] [ a owl:Restriction ;
+                                owl:onProperty sct:363698007 ;
+                                owl:someValuesFrom sct:699879001 ] ] [ a owl:Restriction ;
                         owl:onProperty sct:609096000 ;
                         owl:someValuesFrom [ a owl:Restriction ;
-                                owl:onProperty sct:363698007 ;
-                                owl:someValuesFrom sct:699879001 ] ] ) ] .
+                                owl:onProperty sct:363714003 ;
+                                owl:someValuesFrom sct:66523006 ] ] ) ] .
 
 sct:108279006 a owl:Class ;
     rdfs:label "Radiographic procedure on genitourinary system (procedure)"@en ;
@@ -213,13 +213,13 @@ sct:175129009 a owl:Class ;
     rdfs:subClassOf [ a owl:Restriction ;
             owl:onProperty sct:609096000 ;
             owl:someValuesFrom [ a owl:Restriction ;
-                    owl:onProperty sct:363703001 ;
-                    owl:someValuesFrom sct:261004008 ] ],
+                    owl:onProperty sct:405813007 ;
+                    owl:someValuesFrom sct:80891009 ] ],
         [ a owl:Restriction ;
             owl:onProperty sct:609096000 ;
             owl:someValuesFrom [ a owl:Restriction ;
-                    owl:onProperty sct:405813007 ;
-                    owl:someValuesFrom sct:80891009 ] ],
+                    owl:onProperty sct:363703001 ;
+                    owl:someValuesFrom sct:261004008 ] ],
         sct:27352000 .
 
 sct:175890004 a owl:Class ;
@@ -3729,13 +3729,13 @@ sct:84755001 a owl:Class ;
     rdfs:subClassOf [ a owl:Restriction ;
             owl:onProperty sct:609096000 ;
             owl:someValuesFrom [ a owl:Restriction ;
-                    owl:onProperty sct:424244007 ;
-                    owl:someValuesFrom sct:82107009 ] ],
+                    owl:onProperty sct:363703001 ;
+                    owl:someValuesFrom sct:262202000 ] ],
         [ a owl:Restriction ;
             owl:onProperty sct:609096000 ;
             owl:someValuesFrom [ a owl:Restriction ;
-                    owl:onProperty sct:363703001 ;
-                    owl:someValuesFrom sct:262202000 ] ],
+                    owl:onProperty sct:424244007 ;
+                    owl:someValuesFrom sct:82107009 ] ],
         sct:53438000 .
 
 sct:900000000000442005 a owl:Class ;
