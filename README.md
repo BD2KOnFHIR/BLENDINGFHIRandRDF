@@ -1,4 +1,4 @@
-# Source files for Blending FHIR RDF and OWL
+# Source files for [Blending FHIR RDF and OWL](http://www.swat4ls.org/wp-content/uploads/2017/12/paper_28.pdf)
 
 These files can be used to demonstrate the use of FHIR, RDF and SNOMED CT in the context of a Protege.
 
